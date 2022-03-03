@@ -27,6 +27,7 @@ let noMoreCourse = false;
 let noMoreIngredients = false;
 let mesures = [];
 let tableauCourses = [];
+let uniteDeMesure = ["g", "unités", "L", "kg", "g"];
 
 //Récupère le nombre d'inviter taper dans l'input text
 function getValue(){
@@ -67,14 +68,14 @@ function goToHtml(array, array2) {
             let link = document.createElement("li");
             ulRecette.appendChild(link);
             link.setAttribute(`id`, `${ingredients[index]}-recette`);
-            link.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array[index];
+            link.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array[index] + uniteDeMesure[index];
         }
         noMoreIngredients = true;
     } else if (noMoreIngredients) {
 
         for (let index = 0; index < ingredients.length; index++) {
             let insert = document.getElementById(`${ingredients[index]}-recette`);
-            insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array[index];
+            insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array[index] + uniteDeMesure[index];
         }
     };
 
@@ -85,14 +86,14 @@ function goToHtml(array, array2) {
             let link = document.createElement("li");
             ulCourses.appendChild(link);
             link.setAttribute(`id`, `${ingredients[index]}-courses`);
-            link.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index];
+            link.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteDeMesure[index];
         }
         noMoreCourse = true;
 
     } else if (noMoreCourse) {
         for (let index = 0; index < ingredients.length; index++) {
             let insert = document.getElementById(`${ingredients[index]}-courses`);
-            insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index];
+            insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteDeMesure[index];
         }
     }
 
