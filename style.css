@@ -116,15 +116,34 @@ align-items: center;
 }
 
 .container-list {
-    width: 100%;
+    width: 50%;
     height: 80%;
     padding: 0 12px;
     margin: 10px 0;
-    display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(); */
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-around; */
 }
 
+
+.container-list ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+
+.container-list ul li {
+    list-style: none;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: rgb(0 0 0 / 13%) 1px 2px 9px 0px;
+}
 
 .list {
     height: 80%;
@@ -141,4 +160,14 @@ align-items: center;
 .container-recette p {
     height: 80%;
     
+}
+
+ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li img {
+    width: 40px;
 }
