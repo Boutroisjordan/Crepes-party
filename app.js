@@ -27,7 +27,8 @@ let noMoreCourse = false;
 let noMoreIngredients = false;
 let mesures = [];
 let tableauCourses = [];
-let uniteDeMesure = ["g", "unités", "L", "kg", "g"];
+let uniteDeMesure = ["g", " unité(s)", "L", "kg", "g"];
+let uniteMagasin = [" paquet(s)", " unité(s)", " bouteille(s)", " paquet(s)", " plaquette(s)"];
 
 //Récupère le nombre d'inviter taper dans l'input text
 function getValue(){
@@ -86,14 +87,14 @@ function goToHtml(array, array2) {
             let link = document.createElement("li");
             ulCourses.appendChild(link);
             link.setAttribute(`id`, `${ingredients[index]}-courses`);
-            link.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteDeMesure[index];
+            link.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteMagasin[index];
         }
         noMoreCourse = true;
 
     } else if (noMoreCourse) {
         for (let index = 0; index < ingredients.length; index++) {
             let insert = document.getElementById(`${ingredients[index]}-courses`);
-            insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteDeMesure[index];
+            insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteMagasin[index];
         }
     }
 
