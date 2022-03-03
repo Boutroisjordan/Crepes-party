@@ -24,6 +24,7 @@ let uniteProduct = {
     beurre: 500, //gramme
 };
 
+
 function getValue(){
     let input = document.getElementById("nombre-inviter").value;
     convive = input;
@@ -61,19 +62,19 @@ function course() {
 };
 
 function goToHtml() {
-    document.getElementById("farine-recette").innerHTML = "Il vous faudra " + newRecette.farine + "g de farine";
-    document.getElementById("oeuf-recette").innerHTML = "Il vous faudra " + newRecette.oeuf + " oeufs.";
-    document.getElementById("lait-recette").innerHTML = "Il vous faudra " + newRecette.lait + "L de lait";
-    document.getElementById("sucre-recette").innerHTML = "Il vous faudra " + newRecette.sucre + "g de sucre";
-    document.getElementById("beurre-recette").innerHTML = "Il vous faudra " + newRecette.beurre + "g de beurre";
+    document.getElementById("farine-recette").innerText = newRecette.farine + "g";
+    document.getElementById("oeuf-recette").innerText =  newRecette.oeuf ;
+    document.getElementById("lait-recette").innerText =  newRecette.lait + "L";
+    document.getElementById("sucre-recette").innerText = newRecette.sucre + "g";
+    document.getElementById("beurre-recette").innerText = newRecette.beurre + "g";
 
     // courses
 
-    document.getElementById("farine-courses").innerHTML = "Il vous faudra " + listeDeCourse.farine + " de paquets de farine";
-    document.getElementById("oeuf-courses").innerHTML = "Il vous faudra " + listeDeCourse.oeuf + " oeufs";
-    document.getElementById("lait-courses").innerHTML = "Il vous faudra " + listeDeCourse.lait + " brique de lait";
-    document.getElementById("sucre-courses").innerHTML = "Il vous faudra " + listeDeCourse.sucre + " de paquets de sucre";
-    document.getElementById("beurre-courses").innerHTML = "Il vous faudra " + listeDeCourse.beurre + " plaquette de beurre";
+    document.getElementById("farine-courses").innerText = listeDeCourse.farine + " paquets";
+    document.getElementById("oeuf-courses").innerText = listeDeCourse.oeuf ;
+    document.getElementById("lait-courses").innerText = listeDeCourse.lait + " brique";
+    document.getElementById("sucre-courses").innerText =  listeDeCourse.sucre + " paquets";
+    document.getElementById("beurre-courses").innerText =  listeDeCourse.beurre + " plaquette ";
 }
 
 
