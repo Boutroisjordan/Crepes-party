@@ -5,41 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>ES6 JS</title>
+    <link rel="icon" href="./img/favicon.png" />
+    <title>Crêpes party</title>
 </head>
 <body>
+<!-- wrapper, sert à rendre responsive -->
+    <main class="wrapper">
+        <!-- PARTIE I -->
+        <section class="container-left">
+            <div class="container-h1">
+                <h1>Crépier</h1>
+                <img src="./img/crepe.png" alt="crepes">
+            </div>
+            <div class="container-inviter">
+                <div class="container-h2">
+                    <h2>Nombre de personnes</h2>
+                </div>
+                <input type="text" name="nombre-inviter" id="nombre-inviter">
+                <div class="container-btn">
+                    <button class="btn" onclick="getValue()">valider</button>
+                </div>
 
-    <div class="hello">
-        <h1>Crépier</h1>
-    </div>
+            </div>
+    
+        </section>
+
+        <!-- PARTIE II -->
+        <section class="container-right">
+
+            <div class="wrapper-list">
+                <!-- ingrédients -->
+                <div class="container-list">
+                    <div class="container-h2">
+                        <h2>Ingrédients</h2>
+                    </div>
+                    
+                    <ul id="recette" class="list">
+                        <li id="farine-recette"></li>
+                        <li id="oeuf-recette"></li>
+                        <li id="lait-recette"></li>
+                        <li id="sucre-recette"></li>
+                        <li id="beurre-recette"></li>
+                    </ul>
+                </div>
+                <!-- courses -->
+                <div class="container-list">
+                    <div class="container-h2">
+                        <h2>Liste de course</h2>
+                    </div>
+    
+                    <ul id="courses" class="list">
+                        <li id="farine-courses"></li>
+                        <li id="oeuf-courses"></li>
+                        <li id="lait-courses"></li>
+                        <li id="sucre-courses"></li>
+                        <li id="beurre-courses"></li>
+                    </ul>
+                </div>
+            </div>
+            
+    
+            <div class="container-recette">
+                <div class="container-h2">
+                    <h2>Recette</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus adipisci sunt itaque maxime, vero ex labore aliquid possimus consectetur non ullam beatae sed soluta? Ad et ipsum nobis quaerat voluptatibus!
+                Alias consectetur eveniet neque voluptatum. Error odit voluptatibus itaque soluta nostrum unde eos excepturi dolorem, voluptates nobis atque nemo tenetur inventore quibusdam hic sint necessitatibus eum earum, voluptas corporis! Rerum.</p>
+            </div>
+        </section>
+    </main>
+
 
     
-        <input type="text" name="nombre-inviter" id="nombre-inviter">
-        <button onclick="getValue()">valider</button>
+
    
 
-    <div>
-        <h2>Recette</h2>
-        <ul id="recette">
-            <li id="farine-recette"></li>
-            <li id="oeuf-recette"></li>
-            <li id="lait-recette"></li>
-            <li id="sucre-recette"></li>
-            <li id="beurre-recette"></li>
-        </ul>
-    </div>
-
-    <div>
-        <h2>Liste de course</h2>
-        <ul id="courses">
-            <li id="farine-courses"></li>
-            <li id="oeuf-courses"></li>
-            <li id="lait-courses"></li>
-            <li id="sucre-courses"></li>
-            <li id="beurre-courses"></li>
-        </ul>
-    </div>
-
+   
 
     <script async src="app.js"></script>
     <script async src="two.js"></script>
