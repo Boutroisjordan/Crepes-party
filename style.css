@@ -82,11 +82,14 @@ align-items: center;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    /* transition: .4s ease-in-out; */
 }
 
 .container-h2 {
-    margin: 15px 0;;
+    margin: 15px 0;
+}
+
+.container-h2 h2 {
+    font-size: 1.5rem;
 }
 
 /* part 2 */
@@ -108,7 +111,7 @@ align-items: center;
 .wrapper-list {
     width: 100%;
     height: auto;
-    padding: 25px 0;
+    padding: 15px 0;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -162,15 +165,87 @@ ul li img {
 
 
 
+
 @media screen and (max-width: 1600px) {
+        .container-list {
+            width: 100%;
+            padding: 0;
+        }
+
+        .container-list ul {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px 10px;
+        }
+
+        .container-h2 {
+            margin: 10px 0;;
+        }
+
+        .wrapper-list {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container-list ul li {
+            width: auto;
+        }
+  }
+
+
+@media screen and (max-width: 940px) {
     .wrapper {
         width: 100%;
         height: auto;
-        margin: 0 32px;
+        margin: 20px auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: 1fr;
         justify-content: center;
         align-items: center;
+        }
+
+        .container-right{
+            width: 90%;
+            height: auto;
+            padding: 0 10px;
+        }
+
+        .container-list {
+            width: 100%;
+            padding: 0;
+        }
+
+        .container-list ul {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px 10px;
+        }
+
+        .container-h2 {
+            margin: 10px 0;;
+        }
+
+        .wrapper-list {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container-list ul li {
+            width: auto;
         }
   }
