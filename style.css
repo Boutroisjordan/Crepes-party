@@ -172,10 +172,23 @@ ul li img {
             padding: 0;
         }
 
+        .container-right{
+            width: 90%;
+            height: auto;
+            background-color: #D3D0CB;
+            border-radius: 12px;
+            margin: 0 auto;
+            padding: 0 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
         .container-list ul {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(100px, 140px));
             gap: 10px 10px;
         }
 
@@ -212,6 +225,18 @@ ul li img {
         align-items: center;
         }
 
+        .container-inviter {
+            width: 90%;
+            height: 200px;
+            margin: 20px;
+            background-color: #D3D0CB;
+            border: solid 1px #44BBA4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         .container-right{
             width: 90%;
             height: auto;
@@ -226,7 +251,7 @@ ul li img {
         .container-list ul {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
             gap: 10px 10px;
         }
 
