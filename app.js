@@ -1,12 +1,6 @@
 let convive; //nombres de personnes
-let listeDeCourse = {
-    farine: 0,
-    oeuf: 0,
-    lait: 0,
-    sucre: 0,
-    beurre: 0,
-};
 
+//Recette des crêpes
 let recette = {
     farine: 63,
     oeuf: 1,
@@ -15,6 +9,8 @@ let recette = {
     beurre: 13,
 };
 
+
+// Les unités de packaging Magasin
 let uniteProduct = {
     farine: 500, //grammes
     oeuf: 6, //unité
@@ -23,44 +19,61 @@ let uniteProduct = {
     beurre: 500, //gramme
 };
 
+// Bloque la création de <li> à chaque clique et permet un update des informations
 let noMoreCourse = false;
 let noMoreIngredients = false;
+
+//Tableaux comprenant le résultats des Calculs
 let mesures = [];
 let tableauCourses = [];
+
+//Tableaux comprenant les unités en String
 let uniteDeMesure = ["g", " unité(s)", "L", "kg", "g"];
 let uniteMagasin = [" paquet(s)", " boite(s)", " bouteille(s)", " paquet(s)", " motte(s)"];
 
+
 //Récupère le nombre d'inviter taper dans l'input text
 function getValue(){
+
     let input = document.getElementById("nombre-inviter").value;
-    convive = input;
-    Crepier(convive, recette);
+
+    //Vérifie si l'input est bien un nombre sinon envoie une alert
+    if (isNaN(input)) {
+        window.alert("Veuillez saisir un nombre !")
+    } else {
+        convive = input;
+        Crepier(convive, recette);
+    }
 }
 
-// Calcul les mesures pour réaliser une crêpes
+// Calcul les mesures pour réaliser la recette, stocker dans le tableau mesures
 function Crepier(number, Object) {
+
+    //vide le tableau
     mesures.splice(0, mesures.length);
+
+    //Le calcul
     for (var i = 0 in Object) {
         mesures.push((number * Object[i]).toFixed(2));
     };
+
     faireSesCourses(tableauCourses);
 };
 
 // Calcule la quantité de courses à faire (en fonction des packaging magasin)
-function faireSesCourses() {
-    tableauCourses.splice(0, tableauCourses.length);
-    tableauCourses.push((Math.ceil(mesures[0] / uniteProduct.farine)));
-    tableauCourses.push((Math.ceil(mesures[1] / uniteProduct.oeuf)));
-    tableauCourses.push((Math.ceil(mesures[2] / uniteProduct.lait)));
-    tableauCourses.push((Math.ceil(mesures[3] / uniteProduct.sucre)));
-    tableauCourses.push((Math.ceil(mesures[4] / uniteProduct.beurre)));
+function faireSesCourses(tableau) {
+    tableau.splice(0, tableau.length);
+    tableau.push((Math.ceil(mesures[0] / uniteProduct.farine)));
+    tableau.push((Math.ceil(mesures[1] / uniteProduct.oeuf)));
+    tableau.push((Math.ceil(mesures[2] / uniteProduct.lait)));
+    tableau.push((Math.ceil(mesures[3] / uniteProduct.sucre)));
+    tableau.push((Math.ceil(mesures[4] / uniteProduct.beurre)));
     goToHtml(mesures, tableauCourses);
-    
 };
 
 // Envoie les mesusres et les courses dans le HTML
 function goToHtml(array, array2) {
-    //Ingrédients
+    //Envoie les Ingrédients
     let ingredients = ["farine", "oeuf", "lait", "sucre", "beurre"];
     let ulCourses =  document.getElementById('courses');
     let ulRecette = document.getElementById('ingredients');
@@ -80,7 +93,7 @@ function goToHtml(array, array2) {
         }
     };
 
-    // COURSES
+    // Envoie la liste de Courses
 
     if (!noMoreCourse) {
         for (let index = 0; index < ingredients.length; index++) {
@@ -96,22 +109,4 @@ function goToHtml(array, array2) {
             let insert = document.getElementById(`${ingredients[index]}-courses`);
             insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteMagasin[index];
         }
-    }
-
-
-
-
-    // document.getElementById("farine-courses").innerHTML = `<img src="img/farine.png" alt="farine">` + listeDeCourse.farine + " paquets";
-    // document.getElementById("oeuf-courses").innerHTML = `<img src="img/oeuf-frit.png" alt="oeuf">` + listeDeCourse.oeuf ;
-    // document.getElementById("lait-courses").innerHTML = `<img src="img/carton-de-lait.png" alt="lait">` + listeDeCourse.lait + " brique";
-    // document.getElementById("sucre-courses").innerHTML =  `<img src="img/sucre.png" alt="sucre">` + listeDeCourse.sucre + " paquets";
-    // document.getElementById("beurre-courses").innerHTML =  `<img src="img/beurre.png" alt="beurre">` + listeDeCourse.beurre + " plaquette ";
-}
-
-
-
-
-
-
-
-
+    };
