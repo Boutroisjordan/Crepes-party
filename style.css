@@ -148,14 +148,24 @@ align-items: center;
 
 
 .container-recette {
+    width: 100%;
+    height: auto;
     padding: 25px 0;
     height: 50%;
+    overflow: hidden;
 }
 
+.container-recette #liste-etapes {
+    width: 100%;
+    list-style: none;
+}
 
-.container-recette p {
-    height: 80%;
-    
+.step-heading {
+    font-size: 1.3rem;
+}
+
+.step-detail {
+    margin: 10px 0;
 }
 
 ul li img {
