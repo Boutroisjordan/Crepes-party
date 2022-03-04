@@ -140,6 +140,6 @@ function sendSteps() {
             p.innerText = step[index];
             
         }
-
+        noMoreStep = true;
     };
 }
