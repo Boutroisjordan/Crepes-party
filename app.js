@@ -28,7 +28,7 @@ let noMoreIngredients = false;
 let mesures = [];
 let tableauCourses = [];
 let uniteDeMesure = ["g", " unité(s)", "L", "kg", "g"];
-let uniteMagasin = [" paquet(s)", " unité(s)", " bouteille(s)", " paquet(s)", " plaquette(s)"];
+let uniteMagasin = [" paquet(s)", " boite(s)", " bouteille(s)", " paquet(s)", " motte(s)"];
 
 //Récupère le nombre d'inviter taper dans l'input text
 function getValue(){
@@ -41,8 +41,8 @@ function getValue(){
 function Crepier(number, Object) {
     mesures.splice(0, mesures.length);
     for (var i = 0 in Object) {
-        mesures.push((number * Object[i]));
-    }
+        mesures.push((number * Object[i]).toFixed(2));
+    };
     faireSesCourses(tableauCourses);
 };
 
