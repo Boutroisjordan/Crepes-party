@@ -9,7 +9,6 @@ let recette = {
     beurre: 13,
 };
 
-
 // Les unités de packaging Magasin
 let uniteProduct = {
     farine: 500, //grammes
@@ -22,6 +21,7 @@ let uniteProduct = {
 // Bloque la création de <li> à chaque clique et permet un update des informations
 let noMoreCourse = false;
 let noMoreIngredients = false;
+let noMoreStep = false;
 
 //Tableaux comprenant le résultats des Calculs
 let mesures = [];
@@ -69,6 +69,7 @@ function faireSesCourses(tableau) {
     tableau.push((Math.ceil(mesures[3] / uniteProduct.sucre)));
     tableau.push((Math.ceil(mesures[4] / uniteProduct.beurre)));
     goToHtml(mesures, tableauCourses);
+    sendSteps();
 };
 
 // Envoie les mesusres et les courses dans le HTML
@@ -111,4 +112,30 @@ function goToHtml(array, array2) {
             insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteMagasin[index];
         }
     }
-};
+
+}
+
+
+function sendSteps() {
+    // Envoie les étapes
+    let listStep = document.getElementById("liste-etapes");
+    let step = ["Mettre de la farine dans un saladier, faire un puits au centre.", "Verser dans le puits la moitié du lait.", "élayer avec une spatule en bois en partant du centre et en faisant tomber peu à peu la farine dans le liquide.", "Quand toute la farine est incorporée, la pâte est à peine fluide.", "Pour la rendre parfaitement lisse, la travailler vigoureusement 2 à 3 minutes.", "Ajouter les oeufs entiers battus en omelette.", "Incorporer ensuite le sucre, le sel, l'huile, le parfum.", "Ajouter à ce moment la moitié du liquide qui reste. La pâte doit être onctueuse, fluide sans excès.", "Laisser la reposer une heure si cela est possible mais ce n'est pas du tout impératif", "Faites un essai en cuisant la première crêpe, si la pâte est trop épaisse, rajouter le reste du liquide, progressivement."];
+
+    if (!noMoreStep) {
+        for (let index = 0; index < step.length; index++) {
+            let link = document.createElement("li");
+            link.setAttribute(`class`, `step-link`);
+            listStep.appendChild(link);
+            let h3 = document.createElement("h3");
+            h3.setAttribute(`class`, `step-heading`);
+            h3.innerText = `Étape ${index + 1}`;
+            link.appendChild(h3);
+            let p = document.createElement("p");
+            p.setAttribute(`class`, `step-detail`);
+            link.appendChild(p);
+            p.innerText = step[index];
+            
+        }
+
+    };
+}
