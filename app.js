@@ -105,8 +105,10 @@ function goToHtml(array, array2) {
         noMoreCourse = true;
 
     } else if (noMoreCourse) {
+
         for (let index = 0; index < ingredients.length; index++) {
             let insert = document.getElementById(`${ingredients[index]}-courses`);
             insert.innerHTML = `<img src="img/${ingredients[index]}.png" alt="">` + array2[index] + uniteMagasin[index];
         }
-    };
+    }
+};
