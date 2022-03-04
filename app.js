@@ -122,7 +122,7 @@ function sendSteps() {
     let listStep = document.getElementById("liste-etapes");
 
     //Le tableau des étpaes
-    let step = ["Mettre de la farine dans un saladier, faire un puits au centre.", "Verser dans le puits la moitié du lait.", "Délayer avec une spatule en bois en partant du centre et en faisant tomber peu à peu la farine dans le liquide.", "Quand toute la farine est incorporée, la pâte est à peine fluide.", "Pour la rendre parfaitement lisse, la travailler vigoureusement 2 à 3 minutes.", "Ajouter les oeufs entiers battus en omelette.", "Incorporer ensuite le sucre.", "Ajouter à ce moment la moitié du liquide qui reste. La pâte doit être onctueuse, fluide sans excès.", "Laisser la reposer une heure si cela est possible mais ce n'est pas du tout impératif", "Faites un essai en cuisant la première crêpe, si la pâte est trop épaisse, rajouter le reste du liquide, progressivement."];
+    let step = ["Mettre la farine dans une terrine et former un puits.", "Y déposer les oeufs entiers, le sucre et le beurre.", "Mélanger délicatement avec un fouet en ajoutant au fur et à mesure le lait. La pâte ainsi obtenue doit avoir une consistance d'un liquide légèrement épais.", "Faire chauffer une poêle antiadhésive et la huiler très légèrement à l'aide d'un papier Essuie-tout. Y verser une louche de pâte, la répartir dans la poêle puis attendre qu'elle soit cuite d'un côté avant de la retourner. Cuire ainsi toutes les crêpes à feu doux."];
 
     //L'envoie des étapes dans l'ordre
     if (!noMoreStep) {
