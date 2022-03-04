@@ -111,7 +111,7 @@ h2 {
 
 .wrapper-list {
     width: 100%;
-    height: auto;
+    height: 50%;
     padding: 15px 0;
     display: flex;
     justify-content: center;
@@ -121,8 +121,8 @@ h2 {
 .container-list {
     width: 50%;
     height: 80%;
-    padding: 0 12px;
-    margin: 10px 0;
+    /* padding: 0 12px; */
+    margin: 10px 10px;
 }
 
 
@@ -150,8 +150,9 @@ h2 {
 
 .container-recette {
     width: 100%;
-    height: auto;
+    height: 50%;
     padding: 25px 0;
+    margin: 0 10px;
     height: 50%;
     overflow: hidden;
 }
@@ -224,7 +225,7 @@ ul li img {
   }
 
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 1500px) {
     .wrapper {
         width: 100%;
         height: auto;
